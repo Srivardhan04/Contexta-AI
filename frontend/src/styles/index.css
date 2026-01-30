@@ -1,0 +1,587 @@
+/* ======================================================
+   GLOBAL BASE
+====================================================== */
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Aurora / premium background */
+  background:
+    radial-gradient(60% 60% at 10% 10%, rgba(139,92,246,0.18), transparent 60%),
+    radial-gradient(50% 50% at 90% 20%, rgba(34,211,238,0.14), transparent 55%),
+    radial-gradient(40% 40% at 50% 90%, rgba(236,72,153,0.12), transparent 60%),
+    #020617;
+
+  color: #e5e7eb;
+  overflow: hidden;
+}
+
+/* ======================================================
+   PAGE LAYOUT
+====================================================== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======================================================
+   MAIN GLASS CONTAINER (UPLOAD + CHAT)
+====================================================== */
+.glass-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 28px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.78),
+    rgba(15, 23, 42, 0.55)
+  );
+
+  backdrop-filter: blur(22px);
+  border-radius: 26px;
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill the workspace */
+  margin: 0 auto;
+  overflow: hidden; /* Prevent outer scroll */
+}
+
+/* ======================================================
+   UPLOAD PANEL
+====================================================== */
+.upload-panel {
+  flex-shrink: 0; /* Prevent shrinking */
+  transition: all 0.3s ease;
+}
+
+/* Collapsed state for Upload Panel */
+.upload-panel.collapsed {
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.upload-panel h2 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.upload-panel p {
+  margin: 0 0 14px 0;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.upload-panel input {
+  display: block;
+  margin-bottom: 12px;
+  color: #e5e7eb;
+}
+
+/* ======================================================
+   CHAT GLASS
+====================================================== */
+.chat-glass {
+  flex: 1; /* Take remaining height */
+  min-height: 0; /* Critical for nested scrolling */
+
+  background: rgba(2, 6, 23, 0.55);
+  border-radius: 22px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    0 20px 60px rgba(0,0,0,0.55);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ======================================================
+   CHAT MESSAGES
+====================================================== */
+.chat-messages {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smooth scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 6px;
+}
+
+/* ======================================================
+   MESSAGE ROWS
+====================================================== */
+.message-row {
+  display: flex;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.message-row.ai {
+  justify-content: flex-start;
+}
+
+/* ======================================================
+   MESSAGE BUBBLES
+====================================================== */
+.message-bubble {
+  max-width: 72%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  line-height: 1.55;
+  font-size: 14.5px;
+}
+
+/* AI bubble — calm & readable */
+.message-row.ai .message-bubble {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e5e7eb;
+}
+
+/* User bubble — vibrant & premium */
+.message-row.user .message-bubble {
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #22d3ee,
+    #ec4899
+  );
+  color: #020617;
+
+  box-shadow:
+    0 12px 30px rgba(139,92,246,0.35);
+}
+
+/* Typing indicator */
+.typing {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* ======================================================
+   CHAT INPUT
+====================================================== */
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  flex-shrink: 0; /* Prevent input from squishing */
+
+  background: rgba(2, 6, 23, 0.8);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Input field */
+.chat-input input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+
+  background: rgba(255,255,255,0.08);
+  color: #e5e7eb;
+
+  font-size: 14px;
+}
+
+/* Input focus glow */
+.chat-input input:focus {
+  box-shadow:
+    0 0 0 2px rgba(34,211,238,0.35),
+    0 0 20px rgba(139,92,246,0.35);
+}
+
+/* ======================================================
+   BUTTONS (UPLOAD + SEND)
+====================================================== */
+button {
+  margin-left: 12px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #22d3ee,
+    #8b5cf6,
+    #ec4899
+  );
+
+  color: #020617;
+  font-weight: 700;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(34,211,238,0.35);
+
+  transition: all 0.25s ease;
+}
+
+/* Button hover */
+button:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow:
+    0 18px 45px rgba(236,72,153,0.45);
+}
+
+/* Disabled button */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ======================================================
+   APP SHELL
+====================================================== */
+.app-shell {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+.navbar-glass {
+  height: 64px;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(15,23,42,0.7);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-left: 8px;
+}
+
+.doc-status {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #34d399;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 10px rgba(52,211,153,0.6);
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+.app-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+.sidebar-glass {
+  width: 220px;
+  padding: 20px;
+
+  background: rgba(2,6,23,0.6);
+  backdrop-filter: blur(18px);
+
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-item {
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 14px;
+
+  color: #9ca3af;
+  transition: all 0.25s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255,255,255,0.08);
+  color: #e5e7eb;
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+}
+
+/* ======================================================
+   WORKSPACE
+====================================================== */
+.workspace {
+  flex: 1;
+  padding: 24px;
+  overflow: hidden; /* Workspace shouldn't scroll, the glass container should */
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.nav-item:hover {
+  transform: translateX(4px);
+}
+
+.chat-input input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chat-input button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ======================================================
+   DOCUMENT STATUS (NAVBAR)
+====================================================== */
+
+.doc-status {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-dot.active {
+  background: #34d399;
+  box-shadow: 0 0 10px rgba(52,211,153,0.7);
+}
+
+.status-dot.idle {
+  background: #64748b;
+}
+
+.doc-name {
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.typing::after {
+  content: "▋";
+  animation: blink 1s infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.nav-item {
+  text-decoration: none;
+  display: block;
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  color: #020617;
+  font-weight: 600;
+}
+
+.definition-box {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  line-height: 1.6;
+}
+
+.error {
+  margin-top: 12px;
+  color: #f87171;
+}
+
+/* ===== Terminology Card ===== */
+.terminology-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* ===== Unified Search Bar ===== */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.search-icon {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 15px;
+}
+
+.search-bar input::placeholder {
+  color: #94a3b8;
+}
+
+.search-bar button {
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  color: #020617;
+}
+
+/* ===== Result Card ===== */
+.definition-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.6;
+}
+
+.error-text {
+  color: #f87171;
+}
+/* ===== Terminology Search ===== */
+
+.term-search {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.term-search input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: #e5e7eb;
+  outline: none;
+}
+
+.term-search button {
+  padding: 14px 22px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #22d3ee, #6366f1, #ec4899);
+  color: #020617;
+}
+
+.term-result {
+  margin-top: 20px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  line-height: 1.6;
+}
+
+.error-text {
+  margin-top: 14px;
+  color: #f87171;
+}
+.reset-btn {
+  margin-left: 14px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f43f5e, #f97316);
+  color: #020617;
+}

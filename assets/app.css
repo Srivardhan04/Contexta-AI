@@ -1,0 +1,90 @@
+/* ===== BASE ===== */
+html, body {
+  background-color: #0f1117 !important;
+  color: #f8fafc !important;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* Remove Gradio footer */
+footer, .footer {
+  display: none !important;
+}
+
+/* ===== CONTAINER ===== */
+.gradio-container {
+  max-width: 1700px !important;
+  margin: 0 auto !important;
+  padding: 24px 32px !important;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+  background: #151924;
+  border: 1px solid #2b3246;
+  border-radius: 10px;
+  padding: 18px 24px;
+  margin-bottom: 16px;
+}
+
+.topbar-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.topbar-subtitle {
+  font-size: 13px;
+  color: #a1a7b3;
+}
+
+/* ===== SECTION HEADERS ===== */
+.section-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* ===== PANELS ===== */
+.panel {
+  background: #1c2130;
+  border: 1px solid #2b3246;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* ===== INPUTS ===== */
+input, textarea {
+  background: #22283a !important;
+  border: 1px solid #2b3246 !important;
+  color: #f8fafc !important;
+  border-radius: 8px !important;
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: #7b8190;
+}
+
+/* ===== BUTTONS ===== */
+button.primary {
+  background: #2563eb !important;
+  color: white !important;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+button.secondary {
+  background: #22283a !important;
+  color: #f8fafc !important;
+  border-radius: 8px;
+}
+
+/* ===== TABS ===== */
+button[role="tab"] {
+  color: #a1a7b3 !important;
+  font-weight: 600;
+}
+
+button[role="tab"][aria-selected="true"] {
+  color: #2563eb !important;
+  border-bottom: 2px solid #2563eb;
+}
