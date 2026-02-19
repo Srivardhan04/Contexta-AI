@@ -223,7 +223,7 @@ The application requires a Groq API key for LLM functionality:
 
 ## Project Roadmap
 
-- Multi-document analysis and comparison
+- Multi-document analysis and comparisons
 - Advanced search filters and sorting
 - Custom prompt templates
 - Document annotation features
