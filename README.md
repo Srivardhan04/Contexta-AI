@@ -1,4 +1,4 @@
-# Contexta AI - RAG-Powered Research Paper Assistant
+# Contexta AI
 
 Contexta AI is a GenAI-powered tool that helps students, researchers, and professionals understand research papers faster using natural language queries and intelligent summarization. It combines Retrieval-Augmented Generation (RAG) with Large Language Models (LLMs) to provide comprehensive document analysis and interactive learning.
 
