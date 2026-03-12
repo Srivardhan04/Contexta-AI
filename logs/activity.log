@@ -3,3 +3,4 @@
 [2026-03-11T05:30:03.939Z] add search with debounced input
 [2026-03-12T04:15:24.433Z] mock external service calls in test suite
 [2026-03-12T05:01:06.148Z] add response compression middleware
+[2026-03-12T11:02:22.999Z] add support for batch processing
