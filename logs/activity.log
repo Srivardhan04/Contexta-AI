@@ -9,3 +9,4 @@
 [2026-03-20T06:38:54.037Z] add performance benchmark tests
 [2026-03-20T11:33:43.550Z] reduce memory footprint of worker threads
 [2026-03-20T11:52:32.895Z] update lock file after dependency audit
+[2026-03-21T11:02:23.196Z] remove polyfills no longer needed
