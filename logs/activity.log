@@ -3,3 +3,4 @@
 [2026-03-24T13:21:44.068Z] fix CSS overflow issue on mobile viewport
 [2026-03-25T08:46:11.998Z] validate error responses match schema
 [2026-03-26T05:32:11.563Z] verify webhook delivery retry logic
+[2026-03-27T12:07:10.136Z] fix token refresh not updating stored credentials
