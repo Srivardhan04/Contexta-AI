@@ -4,3 +4,4 @@
 [2026-03-25T08:46:11.998Z] validate error responses match schema
 [2026-03-26T05:32:11.563Z] verify webhook delivery retry logic
 [2026-03-27T12:07:10.136Z] fix token refresh not updating stored credentials
+[2026-03-28T09:42:32.005Z] set up environment config for staging deployment
