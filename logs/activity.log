@@ -1,3 +1,4 @@
 [2026-03-30T12:01:01.849Z] add tests for rate limiter logic
 [2026-03-31T03:58:04.398Z] mock external service calls in test suite
 [2026-03-31T15:03:16.408Z] update nginx reverse proxy configuration
+[2026-03-31T16:00:37.943Z] migrate from deprecated API to v2
