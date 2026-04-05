@@ -7,3 +7,4 @@
 [2026-04-03T07:32:35.446Z] introduce dark mode toggle
 [2026-04-03T13:33:37.351Z] configure log rotation for production
 [2026-04-04T05:14:20.568Z] configure pre-commit hooks for linting
+[2026-04-05T05:39:34.561Z] update error messages to be more user-friendly
