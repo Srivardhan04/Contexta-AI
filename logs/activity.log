@@ -7,3 +7,4 @@
 [2026-04-10T16:59:32.892Z] add performance benchmark tests
 [2026-04-11T07:44:37.358Z] add usage examples to README
 [2026-04-11T09:19:01.599Z] correct off-by-one error in pagination logic
+[2026-04-12T04:43:33.717Z] fix incorrect status code for validation errors
