@@ -6,3 +6,4 @@
 [2026-04-15T15:08:33.702Z] align object properties for readability
 [2026-04-16T07:09:25.882Z] clean up orphaned database migration files
 [2026-04-17T08:40:47.231Z] update cron expression for new maintenance window
+[2026-04-17T11:58:16.115Z] move business logic out of controller
