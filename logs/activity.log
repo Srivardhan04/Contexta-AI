@@ -5,3 +5,4 @@
 [2026-04-23T07:25:53.272Z] add rate limiting to public endpoints
 [2026-04-24T12:36:25.917Z] add environment-specific config files
 [2026-04-25T04:14:37.637Z] clean up orphaned database migration files
+[2026-04-26T14:16:12.902Z] resolve null pointer in user validation
