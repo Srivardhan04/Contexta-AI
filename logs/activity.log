@@ -3,3 +3,4 @@
 [2026-04-29T04:44:30.278Z] patch XSS vulnerability in form input
 [2026-04-29T20:01:03.067Z] fix token refresh not updating stored credentials
 [2026-04-29T20:11:00.872Z] split build and test stages for faster feedback
+[2026-04-29T20:21:26.452Z] prevent duplicate entries in cache
