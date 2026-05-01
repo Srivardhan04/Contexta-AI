@@ -4,3 +4,4 @@
 [2026-04-29T20:01:03.067Z] fix token refresh not updating stored credentials
 [2026-04-29T20:11:00.872Z] split build and test stages for faster feedback
 [2026-04-29T20:21:26.452Z] prevent duplicate entries in cache
+[2026-05-01T13:30:48.465Z] improve error code reference table
