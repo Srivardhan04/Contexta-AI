@@ -1,3 +1,4 @@
 [2026-05-04T06:11:22.946Z] improve error code reference table
 [2026-05-05T03:56:33.875Z] add pagination support to list endpoints
 [2026-05-05T05:04:56.373Z] fix broken redirect after authentication
+[2026-05-05T08:08:19.225Z] fix broken image paths in production build
