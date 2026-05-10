@@ -9,3 +9,4 @@
 [2026-05-08T10:35:53.426Z] clean up commented-out dead code
 [2026-05-09T06:17:21.176Z] update license headers for new year
 [2026-05-09T09:56:42.629Z] add rate limiting to public endpoints
+[2026-05-10T06:59:06.052Z] refactor file upload handler for better testability
