@@ -8,3 +8,4 @@
 [2026-05-15T12:06:59.844Z] wip: save progress on feature branch
 [2026-05-16T04:30:25.799Z] update seed data for local development
 [2026-05-17T07:11:35.923Z] add lint check to pre-commit hook
+[2026-05-17T13:07:31.343Z] update nginx reverse proxy configuration
