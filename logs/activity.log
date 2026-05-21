@@ -3,3 +3,4 @@
 [2026-05-19T11:32:30.967Z] update GitHub Actions workflow to Node 20
 [2026-05-19T12:11:05.454Z] clean up orphaned database migration files
 [2026-05-20T13:01:35.990Z] add support for batch processing
+[2026-05-21T06:15:15.385Z] simplify auth middleware chain
