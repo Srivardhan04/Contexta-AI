@@ -1,7 +1,0 @@
-[2026-05-25T08:55:08.283Z] correct off-by-one error in pagination logic
-[2026-05-26T08:05:06.068Z] fix incorrect timestamp parsing for UTC dates
-[2026-05-27T08:21:37.214Z] add pagination support to list endpoints
-[2026-05-28T05:56:05.916Z] update lock file after dependency audit
-[2026-05-29T05:04:16.501Z] consolidate duplicate API call patterns
-[2026-05-30T10:59:54.374Z] remove trailing whitespace across project
-[2026-05-31T13:03:42.303Z] optimize startup sequence to reduce cold boot time
